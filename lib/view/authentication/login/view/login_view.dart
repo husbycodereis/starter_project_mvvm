@@ -4,10 +4,10 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/base/view/base_view.dart';
+import '../../../../core/constants/image/image_path_svg.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/extensions/string_extensions.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
-import '../../../_product/_constants/image_path_svg.dart';
 import '../view_model/login_view_model.dart';
 
 class LoginView extends StatelessWidget {
@@ -22,12 +22,10 @@ class LoginView extends StatelessWidget {
           model.init();
         },
         onPageBuilder: (BuildContext context, LoginViewModel viewModel) =>
-            DefaultTabController(
-                length: 2, child: buildBody(context, viewModel)));
+            DefaultTabController(length: 2, child: buildBody(context, viewModel)));
   }
 
-  Scaffold buildBody(BuildContext context, LoginViewModel viewModel) =>
-      Scaffold(
+  Scaffold buildBody(BuildContext context, LoginViewModel viewModel) => Scaffold(
         key: viewModel.scaffoldState,
         body: SafeArea(
           child: Column(
@@ -50,33 +48,23 @@ class LoginView extends StatelessWidget {
     return AnimatedContainer(
         color: context.customColors.white,
         duration: context.shortDuration,
-        height:
-            context.mediaQuery.viewInsets.bottom > 0 ? 0 : context.height * 0.3,
-        child: Center(
-            child: SvgPicture.asset(SVGImagePaths.instance!.loginGirlSVG)));
+        height: context.mediaQuery.viewInsets.bottom > 0 ? 0 : context.height * 0.3,
+        child: Center(child: SvgPicture.asset(SVGImagePaths.instance!.loginGirlSVG)));
   }
 
   Container buildTabBar(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: context.customColors.white,
-          borderRadius:
-              const BorderRadius.vertical(bottom: Radius.circular(50))),
+          color: context.customColors.white, borderRadius: const BorderRadius.vertical(bottom: Radius.circular(50))),
       child: Padding(
-        padding: EdgeInsets.only(
-            left: context.highValue,
-            right: context.highValue,
-            bottom: context.lowValue),
+        padding: EdgeInsets.only(left: context.highValue, right: context.highValue, bottom: context.lowValue),
         child: TabBar(
             indicatorSize: TabBarIndicatorSize.label,
             indicatorColor: context.colors.secondary,
             indicatorWeight: 3,
             labelStyle: context.textTheme.bodyText1,
             labelColor: context.customColors.black,
-            tabs: [
-              Tab(icon: Text(LocaleKeys.login_tabOne.locale)),
-              Tab(icon: Text(LocaleKeys.login_tabTwo.locale))
-            ]),
+            tabs: [Tab(icon: Text(LocaleKeys.login_tabOne.locale)), Tab(icon: Text(LocaleKeys.login_tabTwo.locale))]),
       ),
     );
   }
@@ -107,33 +95,27 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  TextFormField buildTextFormFieldEmail(
-      BuildContext context, LoginViewModel viewModel) {
+  TextFormField buildTextFormFieldEmail(BuildContext context, LoginViewModel viewModel) {
     return TextFormField(
       controller: viewModel.emailController,
       validator: (value) => value!.isValidEmail,
       decoration: InputDecoration(
-          labelText: LocaleKeys.login_email.locale,
+          labelText: '${LocaleKeys.login_email.locale} (eve.holt@reqres.in)',
           icon: buildContainerIconField(context, Icons.email)),
     );
   }
 
-  Widget buildTextFormFieldPassword(
-          BuildContext context, LoginViewModel viewModel) =>
-      Observer(builder: (_) {
+  Widget buildTextFormFieldPassword(BuildContext context, LoginViewModel viewModel) => Observer(builder: (_) {
         return TextFormField(
           controller: viewModel.passwordController,
-          validator: (value) =>
-              value!.isNotEmpty ? null : LocaleKeys.login_passwordEnter.locale,
+          validator: (value) => value!.isNotEmpty ? null : LocaleKeys.login_passwordEnter.locale,
           obscureText: viewModel.isLockOpen,
           decoration: InputDecoration(
               suffix: GestureDetector(
                 onTap: () => viewModel.isLockStateChange(),
-                child: Icon(viewModel.isLockOpen
-                    ? Icons.remove_red_eye_outlined
-                    : Icons.remove_red_eye),
+                child: Icon(viewModel.isLockOpen ? Icons.remove_red_eye_outlined : Icons.remove_red_eye),
               ),
-              labelText: LocaleKeys.login_password.locale,
+              labelText: '${LocaleKeys.login_password.locale} (cityslicka)',
               icon: buildContainerIconField(context, Icons.lock)),
         );
       });
@@ -148,9 +130,7 @@ class LoginView extends StatelessWidget {
         ));
   }
 
-  Widget buildForgotPassword() => Align(
-      alignment: Alignment.centerRight,
-      child: Text(LocaleKeys.login_forgot.locale));
+  Widget buildForgotPassword() => Align(alignment: Alignment.centerRight, child: Text(LocaleKeys.login_forgot.locale));
 
   Widget buildLoginButton(BuildContext context, LoginViewModel viewModel) {
     return Observer(builder: (_) {
@@ -176,10 +156,7 @@ class LoginView extends StatelessWidget {
   Widget buildSignUpText() {
     return Center(
       child: Wrap(
-        children: [
-          Text(LocaleKeys.login_sign.tr()),
-          GestureDetector(child: Text(LocaleKeys.login_tabTwo.tr()))
-        ],
+        children: [Text(LocaleKeys.login_sign.tr()), GestureDetector(child: Text(LocaleKeys.login_tabTwo.tr()))],
       ),
     );
   }

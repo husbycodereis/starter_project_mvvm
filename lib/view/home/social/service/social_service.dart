@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:starter_project/view/_product/_models/query/user_query.dart';
-import 'package:starter_project/view/_product/_models/query/user_query_enum.dart';
-import 'package:starter_project/view/_product/_utility/service_helper.dart';
-import 'package:starter_project/view/_product/enum/network_route_enum.dart';
-import 'package:starter_project/view/home/social/model/social_user_model.dart';
-import 'package:starter_project/view/home/social/service/ISocialService.dart';
 import 'package:vexana/vexana.dart';
+
+import '../../../../core/components/models/query/user_query.dart';
+import '../../../../core/components/models/query/user_query_enum.dart';
+import '../../../../core/components/utility/service_helper.dart';
+import '../../../../core/constants/enums/network_route_enum.dart';
+import '../model/social_user_model.dart';
+import 'ISocialService.dart';
 
 class SocialService extends ISocialService with ServiceHelper {
   SocialService(INetworkManager networkManager) : super(manager: networkManager);
@@ -31,7 +32,6 @@ class SocialService extends ISocialService with ServiceHelper {
 
   @override
   Future<List<SocialUser>> fetchUserNameQuery(String text) {
-    // TODO: implement fetchUserNameQuery
     throw UnimplementedError();
   }
 }

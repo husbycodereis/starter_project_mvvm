@@ -3,11 +3,11 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
-import 'package:starter_project/core/base/model/base_view_model.dart';
-import 'package:starter_project/view/_product/_models/query/user_query.dart';
-import 'package:starter_project/view/_product/_utility/throttle_helper.dart';
-import 'package:starter_project/view/home/social/model/social_user_model.dart';
-import 'package:starter_project/view/home/social/service/ISocialService.dart';
+import '../../../../core/base/model/base_view_model.dart';
+import '../../../../core/components/models/query/user_query.dart';
+import '../../../../core/components/utility/throttle_helper.dart';
+import '../model/social_user_model.dart';
+import '../service/ISocialService.dart';
 
 part 'social_view_model.g.dart';
 
@@ -15,7 +15,7 @@ class SocialViewModel = _SoicalViewModelBase with _$SocialViewModel;
 
 abstract class _SoicalViewModelBase with Store, BaseViewModel {
   final ISocialService socialService;
-  late ThrottleStingHelper _throttleStingHelper;
+  late ThrottleStringHelper _throttleStingHelper;
   _SoicalViewModelBase(
     this.socialService,
   );
@@ -23,7 +23,7 @@ abstract class _SoicalViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => this.context = context;
   @override
   void init() {
-    _throttleStingHelper = ThrottleStingHelper();
+    _throttleStingHelper = ThrottleStringHelper();
     fetchAllUsers();
   }
 

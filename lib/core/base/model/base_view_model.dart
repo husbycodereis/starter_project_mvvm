@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../init/cache/locale_manager.dart';
 import '../../init/navigation/navigation_service.dart';
-
 import '../../init/network/vexana_manager.dart';
 
 abstract class BaseViewModel {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:starter_project/core/extensions/context_extensions.dart';
-import 'package:starter_project/core/extensions/string_extensions.dart';
-import 'package:starter_project/core/init/lang/locale_keys.g.dart';
-import 'package:starter_project/core/init/network/vexana_manager.dart';
-import 'package:starter_project/view/_product/_widgets/animation/social_card_animation.dart';
-import 'package:starter_project/view/_product/_widgets/list-tile/friends_card.dart';
-import 'package:starter_project/view/home/social/service/social_service.dart';
 
 import '../../../../core/base/view/base_view.dart';
+import '../../../../core/components/widgets/animation/social_card_animation.dart';
+import '../../../../core/components/widgets/list-tile/friends_card.dart';
+import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/extensions/string_extensions.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+import '../../../../core/init/network/vexana_manager.dart';
+import '../service/social_service.dart';
 import '../viewmodel/social_view_model.dart';
 
 class SocialView extends StatelessWidget {
@@ -33,30 +33,7 @@ class SocialView extends StatelessWidget {
               const Spacer(
                 flex: 2,
               ),
-              TextField(
-                onChanged: (value) {
-                  viewModel.fetchAllSearchQuery(value);
-                },
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(vertical: context.lowValue * 0.5),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: context.colors.onSecondary.withOpacity(0.4),
-                  ),
-                  filled: true,
-                  fillColor: context.customColors.white,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4),
-                      borderSide: const BorderSide(
-                        width: 0.8,
-                      )),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4),
-                      borderSide: const BorderSide(
-                        width: 0.3,
-                      )),
-                ),
-              ),
+              buildSearchField(viewModel, context),
               const Spacer(
                 flex: 2,
               ),
@@ -71,6 +48,33 @@ class SocialView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  TextField buildSearchField(SocialViewModel viewModel, BuildContext context) {
+    return TextField(
+              onChanged: (value) {
+                viewModel.fetchAllSearchQuery(value);
+              },
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: context.lowValue * 0.5),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: context.colors.onSecondary.withOpacity(0.4),
+                ),
+                filled: true,
+                fillColor: context.customColors.white,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4),
+                    borderSide: const BorderSide(
+                      width: 0.8,
+                    )),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4),
+                    borderSide: const BorderSide(
+                      width: 0.3,
+                    )),
+              ),
+            );
   }
 
   AppBar buildAppBar(BuildContext context, SocialViewModel viewModel) {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:starter_project/core/constants/navigation/navigation_constants.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/base/model/base_view_model.dart';
 import '../../../../core/constants/enums/locale_keys_enum.dart';
+import '../../../../core/constants/navigation/navigation_constants.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../model/login_model.dart';
 import '../service/ILoginService.dart';
@@ -44,10 +44,10 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
       final response = await loginService.fetchUserControl(
           LoginModel(email: emailController.text, password: passwordController.text), context!);
       if (response != null) {
-        context!.showSnackBar(response.token!);
         await localeManager.setStringValue(SharedPrefKeys.TOKEN, response.token!);
+        await context!.showSnackBar('response token: ${response.token!}');
         await navigation.navigateToPage(
-          path: NavigationConstants.SOCIAL_VIEW,
+          path: NavigationConstants.HOME,
         );
       }
     }

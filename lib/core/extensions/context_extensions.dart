@@ -16,6 +16,9 @@ extension MediaQueryExtension on BuildContext {
   double get normalValue => height * 0.02;
   double get mediumValue => height * 0.04;
   double get highValue => height * 0.1;
+
+  double dynamicWidth(double val) => width * val;
+  double dynamicHeight(double val) => height * val;
 }
 
 extension ThemeExtension on BuildContext {
@@ -46,21 +49,14 @@ extension PaddingExtensionAll on BuildContext {
 
 extension PaddingExtensionSymmetric on BuildContext {
   EdgeInsets get paddingLowVertical => EdgeInsets.symmetric(vertical: lowValue);
-  EdgeInsets get paddingNormalVertical =>
-      EdgeInsets.symmetric(vertical: normalValue);
-  EdgeInsets get paddingMediumVertical =>
-      EdgeInsets.symmetric(vertical: mediumValue);
-  EdgeInsets get paddingHighVertical =>
-      EdgeInsets.symmetric(vertical: highValue);
+  EdgeInsets get paddingNormalVertical => EdgeInsets.symmetric(vertical: normalValue);
+  EdgeInsets get paddingMediumVertical => EdgeInsets.symmetric(vertical: mediumValue);
+  EdgeInsets get paddingHighVertical => EdgeInsets.symmetric(vertical: highValue);
 
-  EdgeInsets get paddingLowHorizontal =>
-      EdgeInsets.symmetric(horizontal: lowValue);
-  EdgeInsets get paddingNormalHorizontal =>
-      EdgeInsets.symmetric(horizontal: normalValue);
-  EdgeInsets get paddingMediumHorizontal =>
-      EdgeInsets.symmetric(horizontal: mediumValue);
-  EdgeInsets get paddingHighHorizontal =>
-      EdgeInsets.symmetric(horizontal: highValue);
+  EdgeInsets get paddingLowHorizontal => EdgeInsets.symmetric(horizontal: lowValue);
+  EdgeInsets get paddingNormalHorizontal => EdgeInsets.symmetric(horizontal: normalValue);
+  EdgeInsets get paddingMediumHorizontal => EdgeInsets.symmetric(horizontal: mediumValue);
+  EdgeInsets get paddingHighHorizontal => EdgeInsets.symmetric(horizontal: highValue);
 }
 
 extension RadiusExtension on BuildContext {
@@ -79,8 +75,7 @@ extension DurationExtension on BuildContext {
 }
 
 extension SnackBarExtension on BuildContext {
-  dynamic showSnackBar(String text) =>
-      ScaffoldMessenger.of(this).showSnackBar(SnackBar(
+  dynamic showSnackBar(String text) => ScaffoldMessenger.of(this).showSnackBar(SnackBar(
         content: Text(text),
         backgroundColor: customColors.darkGrey,
       ));

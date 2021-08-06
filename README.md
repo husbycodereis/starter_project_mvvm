@@ -30,4 +30,3 @@ Please find the links to the series from below links.
 - [Github link](https://github.com/VB10/flutter-architecture-template)
 
 All credit goes to original creator for preparing the course, this is a work of a personal project.
-# mvvm_starter_project

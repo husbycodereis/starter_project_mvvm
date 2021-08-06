@@ -1,0 +1,74 @@
+{
+    "welcome": "Merhaba hoşgeldin",
+    "onBoard": {
+        "pageOne": {
+            "title": "İyi yap",
+            "description": "Yalnız değilsiniz.Başka bir dünyaya gitmek için eşsiz bir yeteneğin var."
+        },
+        "pageTwo": {
+            "title": "İyi yap",
+            "description": "Yalnız değilsiniz.Başka bir dünyaya gitmek için eşsiz bir yeteneğin var."
+        },
+        "pageThree": {
+            "title": "İyi yap",
+            "description": "Yalnız değilsiniz.Başka bir dünyaya gitmek için eşsiz bir yeteneğin var."
+        }
+    },
+    "login": {
+        "tabOne": "Giriş yap",
+        "tabTwo": "Üye ol",
+        "email": "E-posta",
+        "password": "Parola",
+        "passwordEnter": "Parola",
+        "forgot": "Parolanızı mı unuttunuz?",
+        "enter": "Uygulamaya girin",
+        "sign": "Hesabınız yok mu?"
+    },
+    "social": {
+        "cancel": "İptal",
+        "navbar": "Sosyal",
+        "next  ": "Sonraki",
+        "search": "Arama",
+        "findFriends": "Arkadaşları bul",
+        "following": "Takip et"
+    },
+    "game": {
+        "title": "Birlik oyunu",
+        "navbar": "Oyunlar",
+        "newUpdate": "Yeni Güncellenmiş Oyunlar",
+        "viewAll": "Hepsini gör",
+        "topDownload": "En iyi indirmeler",
+        "tabbar": {
+            "tab1": "YARIŞMA",
+            "tab2": "Simülasyon",
+            "tab3": "GÜNDELİK",
+            "tab4": "Karikatüry",
+            "tab5": "Oyuncaklar"
+        }
+    },
+    "burgers": {
+        "favoriteProducts": "Cok \nSatanlar",
+        "normalProducts": "Burger"
+    },
+    "setting": {
+        "title": "Ayarlar",
+        "navbar": "Ayarlar",
+        "about": {
+            "title": "Proje hakkında",
+            "contributions": "Proje Katkıda Bulunanlar",
+            "home": "Ana sayfa"
+        },
+        "core": {
+            "title": "Proje Çekirdeği",
+            "themeTitle": "Temayı değiştir",
+            "themeDes": "Uygulamanın temasını değiştirmek için dokunun.",
+            "langTitle": "Dili değiştir",
+            "langDesc": "Uygulama dilini değiştirebilirsiniz."
+        },
+        "splash": {
+            "welcome": "The MVVM pattern showcase project"
+        },
+        "exit": "Exit",
+        "applicationTour": "Uygulama Turu"
+    }
+}
