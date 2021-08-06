@@ -1,0 +1,34 @@
+{
+    "welcome": "hello, welcome",
+    "onBoard": {
+        "pageOne": {
+            "title": "Make It Good",
+            "description": "You are not alone. You have unique ability to go to another world."
+        },
+        "pageTwo": {
+            "title": "Make It Good",
+            "description": "You are not alone. You have unique ability to go to another world."
+        },
+        "pageThree": {
+            "title": "Make It Good",
+            "description": "You are not alone. You have unique ability to go to another world."
+        }
+    },
+    "login": {
+        "tabOne": "Login",
+        "tabTwo": "Sign Up",
+        "email": "Email",
+        "password": "Password",
+        "passwordEnter": "Password",
+        "forgot": "Forgot Password?",
+        "enter": "Enter to App",
+        "sign": "Don't have an account? "
+    },
+    "social": {
+        "cancel": "Cancel",
+        "next  ": "Next",
+        "search": "Search",
+        "findFriends": "Find Friends",
+        "following": "Follow"
+    }
+}
