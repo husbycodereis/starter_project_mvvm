@@ -27,7 +27,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
 
   @override
   void init() {
-    loginService = LoginService(vexanaManager!.loginManager);
+    loginService = LoginService(vexanaManager.loginManager);
     emailController = TextEditingController();
     passwordController = TextEditingController();
   }

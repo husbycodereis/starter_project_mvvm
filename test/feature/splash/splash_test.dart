@@ -7,7 +7,7 @@ import 'package:starter_project/view/authentication/splash/service/ISplashServic
 void main() {
   late ISplashService splashService;
   setUp(() {
-    splashService = SplashService(VexanaManager.instance!.networkManager);
+    splashService = SplashService(VexanaManager.instance.networkManager);
   });
 
   test('Fetch Device Information', () async {

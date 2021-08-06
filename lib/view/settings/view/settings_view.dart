@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
+import 'package:starter_project/core/init/provider/notifiers/theme_notifier.dart';
 
 import '../../../core/base/view/base_view.dart';
 import '../../../core/constants/enums/lottie_path_enum.dart';
@@ -9,7 +10,6 @@ import '../../../core/extensions/string_extensions.dart';
 import '../../../core/extensions/widget_extensions.dart';
 import '../../../core/init/lang/language_manager.dart';
 import '../../../core/init/lang/locale_keys.g.dart';
-import '../../../core/init/notifier/theme_notifier.dart';
 import '../../../core/init/theme/light/app_theme_light.dart';
 import '../viewmodel/settings_view_model.dart';
 
@@ -24,6 +24,7 @@ class SettingsView extends StatelessWidget {
           model.setContext(context);
           model.init();
         },
+        onDispose: () {},
         onPageBuilder: (BuildContext context, SettingsViewModel viewModel) => Scaffold(
               body: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -125,10 +126,6 @@ class SettingsView extends StatelessWidget {
               viewModel.changeLanguage(value);
             },
             items: [
-              DropdownMenuItem(
-                value: LanguageManager.instance!.trLocale,
-                child: Text(LanguageManager.instance!.trLocale.languageCode.toUpperCase()),
-              ),
               DropdownMenuItem(
                 value: LanguageManager.instance!.enLocale,
                 child: Text(LanguageManager.instance!.enLocale.languageCode.toUpperCase()),

@@ -24,7 +24,7 @@ extension MediaQueryExtension on BuildContext {
 extension ThemeExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
   ColorScheme get colors => theme.colorScheme;
-  ColorThemeLight get customColors => ColorThemeLight.instance!;
+  ColorThemeLight get customColors => ColorThemeLight.instance;
   TextTheme get textTheme => theme.textTheme;
 }
 

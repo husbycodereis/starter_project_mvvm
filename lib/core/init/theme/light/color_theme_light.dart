@@ -3,7 +3,7 @@ import '../../../extensions/string_extensions.dart';
 
 class ColorThemeLight {
   static ColorThemeLight? _instance;
-  static ColorThemeLight? get instance {
+  static ColorThemeLight get instance {
     return _instance ??= ColorThemeLight.init();
   }
 

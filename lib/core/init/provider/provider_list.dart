@@ -2,12 +2,12 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 import '../navigation/navigation_service.dart';
-import 'on_board_notifier.dart';
-import 'theme_notifier.dart';
+import 'notifiers/on_board_and_login_notifier.dart';
+import 'notifiers/theme_notifier.dart';
 
 class ApplicationProvider {
   static ApplicationProvider? _instance;
-  static ApplicationProvider? get instance {
+  static ApplicationProvider get instance {
     return _instance ??= ApplicationProvider._init();
   }
 

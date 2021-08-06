@@ -15,7 +15,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView<SplashViewModel>(
-      viewModel: SplashViewModel(SplashService(VexanaManager.instance!.networkManager)),
+      viewModel: SplashViewModel(SplashService(VexanaManager.instance.networkManager)),
       onModelReady: (model) {
         model.setContext(context);
         model.init();

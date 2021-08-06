@@ -4,7 +4,6 @@ import 'package:starter_project/view/authentication/splash/view/splash_view.dart
 import '../../../view/authentication/login/view/login_view.dart';
 import '../../../view/authentication/onboard/view/on_board_view.dart';
 import '../../../view/home/home_view.dart';
-import '../../../view/home/social/view/social_view.dart';
 import '../../../view/settings/model/settings_dynamic_model.dart';
 import '../../../view/settings/view/subview/settings_dynamic_view.dart';
 import '../../components/exceptions/navigate_model_exception.dart';
@@ -27,8 +26,6 @@ class NavigationRoute {
         return normalNavigate(const HomeView());
       case NavigationConstants.ON_BOARD:
         return normalNavigate(const OnBoardView());
-      case NavigationConstants.SOCIAL_VIEW:
-        return normalNavigate(const SocialView());
       case NavigationConstants.SETTINGS_WEB_VIEW:
         if (args.arguments is SettingsDynamicModel) {
           return normalNavigate(SettingsDynamicView(model: args.arguments! as SettingsDynamicModel));
