@@ -61,12 +61,8 @@ class _HomeViewState extends State<HomeView> {
 
   final List<BottomNavigationBarItem> _bottomNavigationItems = [
     BottomNavigationBarItem(
-      icon: const Icon(Icons.games),
-      label: LocaleKeys.game_navbar.locale,
-    ),
-    BottomNavigationBarItem(
-      icon: const Icon(Icons.person),
-      label: LocaleKeys.social_navbar.locale,
+      icon: const Icon(Icons.settings),
+      label: LocaleKeys.setting_navbar.locale,
     ),
     BottomNavigationBarItem(
       icon: const Icon(Icons.settings),

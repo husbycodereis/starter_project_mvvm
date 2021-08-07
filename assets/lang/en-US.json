@@ -24,24 +24,25 @@
         "enter": "Enter to App",
         "sign": "Don't have an account? "
     },
-    "setting":{
-        "title":"Settings",
-        "navbar":"Settings",
-        "about":{
-            "title":"About The Project",
-            "contributions":"Project Contributors",
+    "setting": {
+        "title": "Settings",
+        "navbar": "Settings",
+        "exit": "Exit",
+        "applicationTour": "Take a look at the application",
+        "about": {
+            "title": "About The Project",
+            "contributions": "Project Contributors",
             "home": "Home Page"
         },
-        "core":{
-            "title":"Project Core",
-            "themeTitle":"Change Theme",
-            "themeDes":"Tap to change theme of the application.",
-            "langTitle":"Change Language",
-            "langDesc":"You can change the application language."
+        "core": {
+            "title": "Project Core",
+            "themeTitle": "Change Theme",
+            "themeDes": "Tap to change theme of the application.",
+            "langTitle": "Change Language",
+            "langDesc": "You can change the application language."
         },
-        "splash":{
-            "welcome":"The MVVM pattern showcase project"
-            
+        "splash": {
+            "welcome": "The MVVM pattern showcase project"
         }
     }
 }
